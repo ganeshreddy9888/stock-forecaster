@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Forecaster</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="home-page">
+    <div class="navbar">
+        <h1>Stock Forecaster</h1>
+    </div>
+    <div class="container">
+        <form action="{{ url_for('forecast') }}" method="post">
+            <div class="form-group">
+                <label for="stock_symbol"><i class="fas fa-chart-line"></i> Stock Symbol:</label>
+                <input type="text" id="stock_symbol" name="stock_symbol" placeholder="e.g., AAPL" required>
+            </div>
+            <div class="form-group">
+                <label for="start_date"><i class="fas fa-calendar-alt"></i> Start Date (YYYY-MM-DD):</label>
+                <input type="date" id="start_date" name="start_date" required>
+            </div>
+            <div class="form-group">
+                <label for="end_date"><i class="fas fa-calendar-alt"></i> End Date (YYYY-MM-DD):</label>
+                <input type="date" id="end_date" name="end_date" required>
+            </div>
+            <button type="submit">Forecast <i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Stock Forecaster. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
